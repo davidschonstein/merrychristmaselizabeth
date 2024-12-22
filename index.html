@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -100,8 +101,9 @@
             }
         }
 
-        /* Sparkling cursor trail */
-        body { cursor: url('sparkle.png'), auto; }
+        window.addEventListener("load", (event) => {
+            new cursoreffects.ghostCursor();
+        });
 
         /* Marquee text */
         .marquee {
@@ -117,6 +119,32 @@
             color: red;
             font-weight: bold;
         }
+
+        /* Rainbow Text */
+        .rainbow-text {
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+
+        /* Dancing animations */
+        .dancer {
+            width: 50px;
+            height: 50px;
+            background-image: url('dancing.gif');
+            background-size: cover;
+            animation: dance 1s infinite alternate;
+        }
+
+        @keyframes dance {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-10px);
+            }
+        }
     </style>
     <script>
         function toggleDescription(id) {
@@ -128,6 +156,18 @@
                 }
             });
             desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
+        }
+
+        let audio;
+        function playAudio() {
+            if (!audio) {
+                audio = document.createElement('audio');
+                audio.src = '01comin&.mid';
+                audio.loop = true;
+                audio.play();
+            } else {
+                audio.play();
+            }
         }
     </script>
     <script>
@@ -144,8 +184,11 @@
 <body>
 
     <div class="container">
+        <div class="rainbow-text" style="margin-bottom: 20px;">🎉 Welcome to the Christmas Fun Page! 🎉</div>
+        <div class="dancer" style="margin: 0 auto;"> </div>
+        <button onclick="playAudio()" style="margin-top: 20px; padding: 10px; font-size: 1rem; color: #fff; background: #4CAF50; border: none; border-radius: 5px; cursor: pointer; font-family: 'Comic Sans MS', cursive, sans-serif;">🎵 Play Background Music</button>
         <h1>🎄 Merry Christmas Elizabeth! Love David & Eva 🎁</h1>
-        <p>🎅 Below are a series of activities to be enjoyed in Cape May by yourself (for the most part). You can do these activities on different days, or one mega day. Most importantly, don't worry about Remy, this is some time for you to unwind. 🌟</p>
+        <p>🎅 Below are a series of activities to be enjoyed in Cape May by yourself (for the most part). You can do these activities on different days, or one mega day. Most importantly, don't worry about Remy, this is some time for you. 🌟</p>
 
         <div class="marquee" style="margin-bottom: 20px;">
         <marquee behavior="scroll" direction="left">🎄 Enjoy your gifts! 🎁</marquee>
@@ -160,18 +203,19 @@
         <div id="desc2" class="description">
             <p>☕ Get yourself a coffee and a delicious açaí bowl from <a href='https://www.buoycoffeeshop.com/' target='_blank'><strong>The Buoy Coffee Shop</strong></a> ($20 voucher).</p>
             <p>💅 Then head over to <a href='https://www.caperesorts.com/congress-hall/sea-spa' target='_blank'><strong>Sea Spa at Congress Hall</strong></a> for a mani or pedi ($50 voucher).</p>
-            <button onclick="alert('You can level up your mani or pedi for a massage!')" style="margin-top: 10px; padding: 10px 20px; font-size: 1rem; color: #fff; background: #ff0000; border: none; border-radius: 5px; cursor: pointer; animation: flash 1s infinite; font-family: 'Comic Sans MS', cursive, sans-serif;">Upgrade Available!</button>
+            <button onclick="alert('You can level up your mani or pedi for a massage! \n\n The Sea Spa details are in your inbox and the voucher is in the mail. Buoy Coffee Shop voucher will be provided in Cape May.')" style="margin-top: 10px; padding: 10px 20px; font-size: 1rem; color: #fff; background: #ff0000; border: none; border-radius: 5px; cursor: pointer; animation: flash 1s infinite; font-family: 'Comic Sans MS', cursive, sans-serif;">Upgrade Available!</button>
         </div>
 
             <button onclick="toggleDescription('desc3')">🌅 Sunset Cocktail & Books</button>
         <div id="desc3" class="description">
             <p>🌄 Pick a nice afternoon and go over to the lighthouse and take the <a href='https://www.alltrails.com/en-gb/trail/us/new-jersey/cape-may-point-trail' target='_blank'><strong>Cape May Point Trail</strong></a> (30 minute loop).</p>
             <p>📖 Then head over for a tea or cocktail at <a href='https://www.caperesorts.com/virginia-hotel' target='_blank'><strong>The Virginia Hotel</strong></a> ($25 voucher) with a good book (open your wrapped gift to see!).</p>
-            <button onclick="alert('More book! Check your email.')" style="margin-top: 10px; padding: 10px 20px; font-size: 1rem; color: #fff; background: #ff0000; border: none; border-radius: 5px; cursor: pointer; animation: flash 1s infinite; font-family: 'Comic Sans MS', cursive, sans-serif;">Surprise!</button>
+            <button onclick="alert('More book! Check your email. \n\n The Virginia Hotel details are in your inbox and the voucher is coming in the mail.')" style="margin-top: 10px; padding: 10px 20px; font-size: 1rem; color: #fff; background: #ff0000; border: none; border-radius: 5px; cursor: pointer; animation: flash 1s infinite; font-family: 'Comic Sans MS', cursive, sans-serif;">Surprise!</button>
         </div>
             <button onclick="toggleDescription('desc4')">🍀 St Patrick's Date Night</button>
         <div id="desc4" class="description">
             <p>🍀 Night out with your husband to enjoy the <a href='https://willowcreekwinerycapemay.com/events/event/4th-annual-st-patricks-celebration/' target='_blank'><strong>4th Annual Saint Patrick's Weekend Celebration</strong></a> at the Willow Creek Winery. 🍷</p>
+            <button onclick="alert('Totally fine, we won\'t be doing this one. Next time! Enjoy LA!')" style="margin-top: 10px; padding: 10px 20px; font-size: 1rem; color: #fff; background: #ff0000; border: none; border-radius: 5px; cursor: pointer; animation: flash 1s infinite; font-family: 'Comic Sans MS', cursive, sans-serif;">Please Note!</button>
         </div>
             <button onclick="toggleDescription('desc5')">🧘 Center Mind & Body</button>
         <div id="desc5" class="description">
