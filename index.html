@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
 <head>
+    <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
@@ -55,7 +55,7 @@
             border-radius: 5px;
             cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
         }
 
         button:hover {
@@ -149,38 +149,7 @@
         }
     </style>
     <script>
-        function toggleDescription(id) {
-            const desc = document.getElementById(id);
-            const allDescriptions = document.querySelectorAll('.description');
-            allDescriptions.forEach(el => {
-                if (el.id !== id) {
-                    el.style.display = 'none';
-                }
-            });
-            desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
-        }
-
-        let audio;
-        function playAudio() {
-            if (!audio) {
-                audio = document.createElement('audio');
-                audio.src = '01comin&.mid';
-                audio.loop = true;
-                audio.play();
-            } else {
-                audio.play();
-            }
-        }
-    </script>
-    <script>
-        window.onload = function() {
-            const audio = document.createElement('audio');
-            audio.src = '01comin&.mid';
-            audio.loop = true;
-            audio.autoplay = true;
-            audio.style.display = 'none';
-            document.body.appendChild(audio);
-        };
+        
     </script>
 </head>
 <body>
@@ -188,7 +157,7 @@
     <div class="container">
         <div class="rainbow-text" style="margin-bottom: 20px;">🎉 Welcome to the Christmas Fun Page! 🎉</div>
         <div class="dancer" style="margin: 0 auto;"> </div>
-        <button onclick="playAudio()" style="margin-top: 20px; padding: 10px; font-size: 1rem; color: #fff; background: #4CAF50; border: none; border-radius: 5px; cursor: pointer; font-family: 'Comic Sans MS', cursive, sans-serif;">🎵 Play Background Music</button>
+        
         <h1>🎄 Merry Christmas Elizabeth! Love David & Eva 🎁</h1>
         <p>🎅 Below are a series of activities to be enjoyed in Cape May by yourself (for the most part). You can do these activities on different days, or one mega day. Most importantly, don't worry about Remy, this is some time for you. 🌟</p>
 
