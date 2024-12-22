@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christmas SpongeBob Theme</title>
+    <title>Merry Christmas Elizabeth</title>
     <style>
         body {
             margin: 0;
@@ -14,7 +14,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-min-height: 100vh;
+            min-height: 100vh;
             overflow-y: auto;
         }
 
@@ -25,19 +25,21 @@
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             max-width: 600px;
+            width: 90%;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 10px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
             font-family: 'Comic Sans MS', cursive, sans-serif;
         }
 
         p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
             font-family: 'Comic Sans MS', cursive, sans-serif;
+            line-height: 1.5;
         }
 
         button {
@@ -73,6 +75,30 @@
         .description a:hover {
             text-decoration: underline;
         }
+
+        @keyframes flash {
+            0%, 100% { background-color: #ff0000; }
+            50% { background-color: #ffff00; }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            button {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+
+            .container {
+                max-width: 90%;
+            }
+        }
     </style>
     <script>
         function toggleDescription(id) {
@@ -105,12 +131,6 @@
             <button onclick="alert('You can level up your mani or pedi for a massage!')" style="margin-top: 10px; padding: 10px 20px; font-size: 1rem; color: #fff; background: #ff0000; border: none; border-radius: 5px; cursor: pointer; animation: flash 1s infinite; font-family: 'Comic Sans MS', cursive, sans-serif;">Upgrade Available!</button>
         </div>
 
-        <style>
-        @keyframes flash {
-            0%, 100% { background-color: #ff0000; }
-            50% { background-color: #ffff00; }
-        }
-        </style>
             <button onclick="toggleDescription('desc3')">🌅 Sunset Cocktail & Book</button>
         <div id="desc3" class="description">
             <p>🌄 Pick a nice afternoon, head on over to the lighthouse and the <a href='https://www.alltrails.com/en-gb/trail/us/new-jersey/cape-may-point-trail' target='_blank'><strong>Cape May Point Trail</strong></a> (30 minute loop).</p>
