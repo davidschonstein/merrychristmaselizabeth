@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas SpongeBob Theme</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Comic Sans MS', Arial, sans-serif;
+            background: url('spongebob.jpg') repeat;
+            background-size: 200px 200px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-min-height: 100vh;
+            overflow-y: auto;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+
+        p {
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+
+        button {
+            margin: 10px 0;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background: #ff6347;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .description {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+
+        .description a {
+            color: #ff6347;
+            text-decoration: none;
+        }
+
+        .description a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function toggleDescription(id) {
+            const desc = document.getElementById(id);
+            const allDescriptions = document.querySelectorAll('.description');
+            allDescriptions.forEach(el => {
+                if (el.id !== id) {
+                    el.style.display = 'none';
+                }
+            });
+            desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>🎄 Merry Christmas Elizabeth! Love David & Eva 🎁</h1>
+        <p>🎅 Below are a series of activities to be enjoyed in Cape May by yourself (for the most part). You can do these activities on different days, or one mega day. Most importantly, don't worry about Remy, this is some time for you to unwind. 🌟</p>
+
+        <button onclick="toggleDescription('desc1')">🍳 Master Chef Experience</button>
+        <div id="desc1" class="description">
+            <p>🍹 Get a tasty drink (or lunch) at <a href='https://www.caperesorts.com/beach-plum-farm' target='_blank'><strong>Beach Plum Farm</strong></a> ($50 voucher) and buy an ingredient for a delicious dinner cooked by your husband. Send him a text with your chosen ingredient and he will do the rest! 🍽️</p>
+            <p>🍷 Head over to <a href='http://www.willowcreekwinery.com/' target='_blank'><strong>Willow Creek Winery</strong></a> ($25 voucher) and grab a bottle of wine for dinner (or just get yourself a glass of wine or tasting!).</p>
+            <p>Bunica and your husband will be taking care of Remy while you are out and when you get back for dinner, so you can sit back, relax, and be waited on.</p>
+        </div>
+            <button onclick="toggleDescription('desc2')">☕ Breakfast & Pampering</button>
+        <div id="desc2" class="description">
+            <p>☕ Get yourself a coffee and a delicious açaí bowl from <a href='https://www.buoycoffeeshop.com/' target='_blank'><strong>The Buoy Coffee Shop</strong></a> ($20 voucher).</p>
+            <p>💅 Then head over to <a href='https://www.caperesorts.com/congress-hall/sea-spa' target='_blank'><strong>Sea Spa at Congress Hall</strong></a> for a mani or pedi ($50 voucher).</p>
+            <button onclick="alert('You can level up your mani or pedi for a massage!')" style="margin-top: 10px; padding: 10px 20px; font-size: 1rem; color: #fff; background: #ff0000; border: none; border-radius: 5px; cursor: pointer; animation: flash 1s infinite; font-family: 'Comic Sans MS', cursive, sans-serif;">Upgrade Available!</button>
+        </div>
+
+        <style>
+        @keyframes flash {
+            0%, 100% { background-color: #ff0000; }
+            50% { background-color: #ffff00; }
+        }
+        </style>
+            <button onclick="toggleDescription('desc3')">🌅 Sunset Cocktail & Book</button>
+        <div id="desc3" class="description">
+            <p>🌄 Pick a nice afternoon, head on over to the lighthouse and the <a href='https://www.alltrails.com/en-gb/trail/us/new-jersey/cape-may-point-trail' target='_blank'><strong>Cape May Point Trail</strong></a> (30 minute loop).</p>
+            <p>📖 Then head over for a tea or cocktail at <a href='https://www.caperesorts.com/virginia-hotel' target='_blank'><strong>The Virginia Hotel</strong></a> ($25 voucher) with a good book (open your wrapped gift to see!).</p>
+        </div>
+            <button onclick="toggleDescription('desc4')">🍀 St Patrick's Date Night</button>
+        <div id="desc4" class="description">
+            <p>🍀 Night out with your husband to enjoy the <a href='https://willowcreekwinerycapemay.com/events/event/4th-annual-st-patricks-celebration/' target='_blank'><strong>4th Annual Saint Patrick's Weekend Celebration</strong></a> at the Willow Creek Winery. 🍷</p>
+        </div>
+    </div>
+</body>
+</html>
