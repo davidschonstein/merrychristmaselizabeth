@@ -6,11 +6,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merry Christmas Elizabeth</title>
-    
-        * {
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Comic Sans MS', Arial, sans-serif;
+            background: url('spongebob.jpg') repeat;
+            background-size: 200px 200px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-y: auto;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
             font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
         }
-    
+
+        p {
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            line-height: 1.5;
+        }
+
+        button {
+            margin: 10px 0;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background: #ff6347;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .description {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+
+        .description a {
+            color: #ff6347;
+            text-decoration: none;
+        }
+
+        .description a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes flash {
+            0%, 100% { background-color: #ff0000; }
+            50% { background-color: #ffff00; }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            button {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+
+            .container {
+                max-width: 90%;
+            }
+        }
+
+        window.addEventListener("load", (event) => {
+            new cursoreffects.ghostCursor();
+        });
+
+        /* Marquee text */
+        .marquee {
+            margin: 20px 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: yellow;
+        }
+
+        /* Under construction */
+        .under-construction {
+            margin: 20px 0;
+            color: red;
+            font-weight: bold;
+        }
+
+        /* Rainbow Text */
+        .rainbow-text {
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+
+        /* Dancing animations */
+        .dancer {
+            width: 50px;
+            height: 50px;
+            background-image: url('dancing.gif');
+            background-size: cover;
+            animation: dance 1s infinite alternate;
+        }
+
+        @keyframes dance {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
     <script>
         function toggleDescription(id) {
             const desc = document.getElementById(id);
@@ -75,7 +211,7 @@
         <div id="desc3" class="description">
             <p>🌄 Pick a nice afternoon and go over to the lighthouse and take the <a href='https://www.alltrails.com/en-gb/trail/us/new-jersey/cape-may-point-trail' target='_blank'><strong>Cape May Point Trail</strong></a> (30 minute loop).</p>
             <p>📖 Then head over for a tea or cocktail at <a href='https://www.caperesorts.com/virginia-hotel' target='_blank'><strong>The Virginia Hotel</strong></a> ($25 voucher) with a good book (open your wrapped gift to see!).</p>
-            <button onclick="alert('More (audio)book! Check your email. \n\nThe Virginia Hotel details are in your inbox and the voucher is coming in the mail.')" style="margin-top: 10px; padding: 10px 20px; font-size: 1rem; color: #fff; background: #ff0000; border: none; border-radius: 5px; cursor: pointer; animation: flash 1s infinite; font-family: 'Comic Sans MS', cursive, sans-serif;">Surprise!</button>
+            <button onclick="alert('More book! Check your email. \n\nThe Virginia Hotel details are in your inbox and the voucher is coming in the mail.')" style="margin-top: 10px; padding: 10px 20px; font-size: 1rem; color: #fff; background: #ff0000; border: none; border-radius: 5px; cursor: pointer; animation: flash 1s infinite; font-family: 'Comic Sans MS', cursive, sans-serif;">Surprise!</button>
         </div>
             <button onclick="toggleDescription('desc4')">🍀 St Patrick's Date Night</button>
         <div id="desc4" class="description">
