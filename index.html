@@ -149,7 +149,16 @@
         }
     </style>
     <script>
-        
+        function toggleDescription(id) {
+            const desc = document.getElementById(id);
+            const allDescriptions = document.querySelectorAll('.description');
+            allDescriptions.forEach(el => {
+                if (el.id !== id) {
+                    el.style.display = 'none';
+                }
+            });
+            desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
+        }
     </script>
 </head>
 <body>
