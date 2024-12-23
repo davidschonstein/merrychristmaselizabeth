@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -149,6 +147,19 @@
                 transform: translateY(-10px);
             }
         }
+
+        @keyframes flash {
+            0%, 100% {
+                background-color: #ff0000;
+            }
+            50% {
+                background-color: #ffff00;
+            }
+        }
+            to {
+                transform: translateY(-10px);
+            }
+        }
     </style>
     <script>
         function toggleDescription(id) {
@@ -170,7 +181,7 @@
         <div class="dancer" style="margin: 0 auto;"> </div>
         
         <h1>🎄 Merry Christmas Elizabeth! Love David & Eva 🎁</h1>
-        <p>🎅 Below are a series of activities to be enjoyed in Cape May by yourself (for the most part). You can do these activities on different days, or one mega day. Most importantly, don't worry about Remy, this is some time for you. 🌟</p>
+        <p>🎅 Below are a series of activities to be enjoyed in Cape May. You can do these activities on different days, or one mega day. Most importantly, don't worry about Remy, this is some time for you (for the most part). 🌟</p>
 
         <div class="marquee" style="margin-bottom: 20px;">
         <marquee behavior="scroll" direction="left">🎄 Enjoy your gifts! 🎁</marquee>
@@ -196,8 +207,9 @@
         </div>
             <button onclick="toggleDescription('desc4')">🍀 St Patrick's Date Night</button>
         <div id="desc4" class="description">
-            <p>🍀 Night out with your husband to enjoy the <a href='https://willowcreekwinerycapemay.com/events/event/4th-annual-st-patricks-celebration/' target='_blank'><strong>4th Annual Saint Patrick's Weekend Celebration</strong></a> at the Willow Creek Winery. 🍷</p>
-            <button onclick="alert('Totally fine, we won\'t be doing this one. Next time! Enjoy LA!')" style="margin-top: 10px; padding: 10px 20px; font-size: 1rem; color: #fff; background: #ff0000; border: none; border-radius: 5px; cursor: pointer; animation: flash 1s infinite; font-family: 'Comic Sans MS', cursive, sans-serif;">Please Note!</button>
+            <p style="text-decoration: line-through;">🍀 Night out with your husband to enjoy the <a href='https://willowcreekwinerycapemay.com/events/event/4th-annual-st-patricks-celebration/' target='_blank'><strong>4th Annual Saint Patrick's Weekend Celebration</strong></a> at the Willow Creek Winery. 🍷</p>
+            <p>🦞 Night out with your husband to enjoy a tasty seafood meal at <a href='http://www.louisascapemay.com/' target='_blank'><strong>Louisa's Cafe</strong></a>. 🍴</p>
+            <button onclick="alert('Totally fine, we don\'t need to do this on St Patrick\'s Day. Next time! Enjoy LA! \n\nWe can pick any night for a lovely date.')" style="margin-top: 10px; padding: 10px 20px; font-size: 1rem; color: #fff; background: #ff0000; border: none; border-radius: 5px; cursor: pointer; animation: flash 1s infinite; font-family: 'Comic Sans MS', cursive, sans-serif;">Please Note!</button>
         </div>
             <button onclick="toggleDescription('desc5')">🧘 Center Mind & Body</button>
         <div id="desc5" class="description">
